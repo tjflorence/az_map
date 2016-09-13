@@ -1,12 +1,12 @@
 %{
-    make diag backslash off
+    make vert bigbar pattern
 %}
 
 pattern.xpix = 96;
 pattern.ypix = 32;
 
-pattern.x_num       = 96;       % There are 96 pixel around the display (12x8) 
-pattern.y_num       = 32;       % two frames of Y, at 2 different spatial frequencies
+pattern.x_num       = 96;        % There are 96 pixel around the display (12x8) 
+pattern.y_num       = 16;       % two frames of Y, at 2 different spatial frequencies
 pattern.num_panels  = 48;       % This is the number of unique Panel IDs required.
 pattern.gs_val      = 1;        % This pattern will use 8 intensity levels
 pattern.row_compression = 0;
@@ -14,22 +14,15 @@ pattern.row_compression = 0;
 Pats = zeros(pattern.ypix, pattern.xpix, pattern.x_num, pattern.y_num);
 
 Pat_frame = zeros(pattern.ypix, pattern.xpix);
-Pat_frame(1:8, :) = 1; 
-for jj = 2:96
-    Pat_frame(:,jj) = circshift(Pat_frame(:,jj), jj-1);
-end
+single_per = [zeros(32, 8) ones(32, 8)];
+Pat_frame_std = repmat(single_per, [1 6]);
 
-Pat_frame = circshift(Pat_frame, [0 -24]);
-Pat_frame(:, 41:96) = 0;
-Pat_frame(20:32, 1:10) = 0;
-Pat_frame(1:10, 30:42) = 0;
-
-Pat_frame = flipud(Pat_frame);
-
-Pats(:,:,1,1) = Pat_frame;   
 for i = 1:pattern.x_num
 
     for j = 1:pattern.y_num
+        
+        Pat_frame = circshift(Pat_frame_std, [0 j-1]);
+        Pat_frame(:,1:52) = 0;
 
         c_frame     = circshift(Pat_frame, [j-1 i-1]);
 
@@ -49,5 +42,5 @@ pattern.BitMapIndex = process_panel_map(pattern);
 pattern.data = Make_pattern_vector(pattern);
 
 % directory_name = 'c:\matlabroot\Panels\Patterns';
-str = [pwd '/Pattern_008_bigbar_diag_fwd_on'];
+str = [pwd '/patterns/Pattern_006_vert_R'];
 save(str, 'pattern');

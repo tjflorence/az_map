@@ -49,5 +49,5 @@ pattern.BitMapIndex = process_panel_map(pattern);
 pattern.data = Make_pattern_vector(pattern);
 
 % directory_name = 'c:\matlabroot\Panels\Patterns';
-str = [pwd '/Pattern_008_bigbar_diag_fwd_on'];
+str = [pwd '/pattern_files/Pattern_008_bigbar_diag_fwd_on'];
 save(str, 'pattern');
