@@ -1,0 +1,22 @@
+function stim_struct = generate_az_map_stim_struct()
+
+
+patstruct_01_flicker_stim_struct
+patstruct_02_bigbar_vert_stim_struct
+patstruct_03_bigbar_diag_back_stim_struct
+patstruct_04_bigbar_diag_fwd_stim_struct
+patstruct_05_bigbar_horz_stim_struct
+patstruct_06_small_vertbar_sweeps
+patstruct_07_small_horzbar_sweeps
+patstruct_08_motion_horz
+patstruct_09_motion_vert
+patstruct_10_motion_diag_fwd
+patstruct_11_motion_diag_back
+patstruct_12_motion_complex_SBD
+patstruct_13_motion_component
+patstruct_14_loom
+
+stim_struct = stim;
+
+
+end
