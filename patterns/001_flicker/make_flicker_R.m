@@ -16,8 +16,8 @@ Pat_middle = 4*ones(pattern.ypix, pattern.xpix);
 Pat_on = 4*ones(pattern.ypix, pattern.xpix);
 Pat_off = 4*ones(pattern.ypix, pattern.xpix);
 
-Pat_on(:, 1:21)     = 7;
-Pat_off(:, 1:21)    = 0;
+Pat_on(:, 1:44)     = 7;
+Pat_off(:, 1:44)    = 0;
 
 Pat_on = rot90(Pat_on, 2);
 Pat_off = rot90(Pat_off, 2);
@@ -44,10 +44,10 @@ pattern.Panel_map   = [12 8 4 11 7 3 10 6 2  9 5 1;...
                         36 32 28 35 31 27 34 30 26 33 29 25;...
                         48 44 40 47 43 39 46 42 38 45 41 37];
                  
-directory_name = 'C:\matlab_root\az_map\patterns\001_flicker\pat_files';
+directory_name = '/Users/florencet/Documents/matlab_root/az_map/patterns/001_flicker';
 pattern.BitMapIndex = process_panel_map(pattern);
 pattern.data = Make_pattern_vector(pattern);
 
 % directory_name = 'c:\matlabroot\Panels\Patterns';
-str = [directory_name '\Pattern_003_R_flicker'];
+str = [directory_name '/pattern_files/Pattern_003_R_flicker'];
 save(str, 'pattern');

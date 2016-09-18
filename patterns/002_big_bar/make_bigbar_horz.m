@@ -19,11 +19,11 @@ Pat_frame(:, 1:8) = 0;
 Pats(:,:,1,1) = Pat_frame;
 
 
-for j = 2:96
+for j = 2:pattern.y_num
     
     Pat_frame     = circshift(Pat_frame, [0 1]);
 
-    Pats(:,:,j,1) = Pat_frame;
+    Pats(:,:,1,j) = Pat_frame;
 
 end
 

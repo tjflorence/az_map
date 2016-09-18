@@ -5,8 +5,8 @@
 pattern.xpix = 96;
 pattern.ypix = 32;
 
-pattern.x_num       = 1;        % There are 96 pixel around the display (12x8) 
-pattern.y_num       = 32;       % two frames of Y, at 2 different spatial frequencies
+pattern.x_num       = 96;        % There are 96 pixel around the display (12x8) 
+pattern.y_num       = 1;       % two frames of Y, at 2 different spatial frequencies
 pattern.num_panels  = 48;       % This is the number of unique Panel IDs required.
 pattern.gs_val      = 1;        % This pattern will use 8 intensity levels
 pattern.row_compression = 0;
@@ -14,23 +14,15 @@ pattern.row_compression = 0;
 Pats = zeros(pattern.ypix, pattern.xpix, pattern.x_num, pattern.y_num);
 
 Pat_frame = zeros(pattern.ypix, pattern.xpix);
-Pat_frame(1:8, :) = 1; 
-for jj = 2:96
-    Pat_frame(:,jj) = circshift(Pat_frame(:,jj), jj-1);
-end
-
-Pat_frame = circshift(Pat_frame, [0 -24]);
-Pat_frame(:, 41:96) = 0;
-Pat_frame(20:32, 1:10) = 0;
-Pat_frame(1:10, 30:42) = 0;
+Pat_frame(:, 1:8) = 1; 
 
 
 Pats(:,:,1,1) = Pat_frame;
-for j = 2:32
+for j = 2:pattern.x_num
     
-    Pat_frame     = circshift(Pat_frame, [1 0]);
+    Pat_frame     = circshift(Pat_frame, [0 1]);
 
-    Pats(:,:,1,32) = Pat_frame;
+    Pats(:,:,j,1) = Pat_frame;
 
 end
 
@@ -40,10 +32,9 @@ pattern.Panel_map   = [12 8 4 11 7 3 10 6 2  9 5 1;...
                         36 32 28 35 31 27 34 30 26 33 29 25;...
                         48 44 40 47 43 39 46 42 38 45 41 37];
                  
-directory_name = 'C:\matlab_root\az_map\patterns\002_big_bar\pattern_files';
 pattern.BitMapIndex = process_panel_map(pattern);
 pattern.data = Make_pattern_vector(pattern);
 
 % directory_name = 'c:\matlabroot\Panels\Patterns';
-str = [directory_name '\Pattern_004_bigbar_horz_on'];
+str = [pwd '\patterns' '\Pattern_002_bigbar_vert_on'];
 save(str, 'pattern');
