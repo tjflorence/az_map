@@ -1,5 +1,5 @@
 %{
-    make diag back L side only
+    make diag fwd L side only
 %}
 
 pattern.xpix = 96;
@@ -19,7 +19,7 @@ Pat_frame = repmat(single_per, [2 1]);
 for ii = 2:96
     Pat_frame(:,ii) = circshift(Pat_frame(:,ii), [ii-1 0]);
 end
-flipud(Pat_frame);
+Pat_frame = flipud(Pat_frame);
 Pat_frame(:,44:end) = 0;
 
 for i = 1:pattern.x_num
