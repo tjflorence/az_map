@@ -26,276 +26,276 @@ slow_vec_R    = repmat(fliplr(create_posvec(1,16,6, 0)), [1 100]);
 med_vec_R     = repmat(fliplr(create_posvec(1,16,3, 0)), [1 100]);
 fast_vec_R    = repmat(fliplr(create_posvec(1,16,1, 0)), [1 100]);
 
-%% L vert bar wf,  slow 
-stim(64).name = 'motion_wf_vert_L_0.5_hz';
-stim(64).num = 64;
-stim(64).pat_id = 19;
-stim(64).xpos_vec = [nan(1, prestim_time*50)...
+%% diag back bar wf,  slow left motion
+stim(100).name = 'motion_wf_diag_back_L_0.5_hz';
+stim(100).num = 100;
+stim(100).pat_id = 21;
+stim(100).xpos_vec = [nan(1, prestim_time*50)...
                         ones(1, 50*motion_stim_time)...                    
                         nan(1, prestim_time*50)];
                                         
-stim(64).ypos_vec = [nan(1, prestim_time*50)...
+stim(100).ypos_vec = [nan(1, prestim_time*50)...
                         slow_vec_L(1:50*motion_stim_time)...
                         nan(1, prestim_time*50)];
                     
-stim(64).type = 'position';
-stim(64).time = length(stim(64).xpos_vec)/50;
+stim(100).type = 'position';
+stim(100).time = length(stim(100).xpos_vec)/50;
 
-%% L vert bar wf,  medium 
-stim(65).name = 'motion_wf_vert_L_1_hz';
-stim(65).num = 65;
-stim(65).pat_id = 19;
-stim(65).xpos_vec = [nan(1, prestim_time*50)...
+%% diag back bar wf,  medium left motion
+stim(101).name = 'motion_wf_diag_back_L_1_hz';
+stim(101).num = 101;
+stim(101).pat_id = 21;
+stim(101).xpos_vec = [nan(1, prestim_time*50)...
                         ones(1, 50*motion_stim_time)...                    
                         nan(1, prestim_time*50)];
                                         
-stim(65).ypos_vec = [nan(1, prestim_time*50)...
+stim(101).ypos_vec = [nan(1, prestim_time*50)...
                         med_vec_L(1:50*motion_stim_time)...
                         nan(1, prestim_time*50)];
                     
-stim(65).type = 'position';
-stim(65).time = length(stim(65).xpos_vec)/50;
+stim(101).type = 'position';
+stim(101).time = length(stim(101).xpos_vec)/50;
 
-%% L vert bar wf, fast 
-stim(66).name = 'motion_wf_vert_L_3_hz';
-stim(66).num = 66;
-stim(66).pat_id = 19;
-stim(66).xpos_vec = [nan(1, prestim_time*50)...
+%% diag back bar wf, fast left motion 
+stim(102).name = 'motion_wf_diag_back_L_3_hz';
+stim(102).num = 102;
+stim(102).pat_id = 21;
+stim(102).xpos_vec = [nan(1, prestim_time*50)...
                         ones(1, 50*motion_stim_time)...                    
                         nan(1, prestim_time*50)];
                                         
-stim(66).ypos_vec = [nan(1, prestim_time*50)...
+stim(102).ypos_vec = [nan(1, prestim_time*50)...
                         fast_vec_L(1:50*motion_stim_time)...
                         nan(1, prestim_time*50)];
                     
-stim(66).type = 'position';
-stim(66).time = length(stim(66).xpos_vec)/50;
+stim(102).type = 'position';
+stim(102).time = length(stim(102).xpos_vec)/50;
 
-%% R vert bar wf, slow 
-stim(67).name = 'motion_wf_vert_R_0.5_hz';
-stim(67).num = 67;
-stim(67).pat_id = 19;
-stim(67).xpos_vec = [nan(1, prestim_time*50)...
+%% diag back bar wf, slow right motion
+stim(103).name = 'motion_wf_diag_back_R_0.5_hz';
+stim(103).num = 103;
+stim(103).pat_id = 21;
+stim(103).xpos_vec = [nan(1, prestim_time*50)...
                         ones(1, 50*motion_stim_time)...                    
                         nan(1, prestim_time*50)];
                                         
-stim(67).ypos_vec = [nan(1, prestim_time*50)...
+stim(103).ypos_vec = [nan(1, prestim_time*50)...
                         slow_vec_R(1:50*motion_stim_time)...
                         nan(1, prestim_time*50)];
                     
-stim(67).type = 'position';
-stim(67).time = length(stim(67).xpos_vec)/50;
+stim(103).type = 'position';
+stim(103).time = length(stim(103).xpos_vec)/50;
 
-%% R vert bar wf,  medium 
-stim(68).name = 'motion_wf_vert_R_1_hz';
-stim(68).num = 68;
-stim(68).pat_id = 19;
-stim(68).xpos_vec = [nan(1, prestim_time*50)...
+%% diag back bar wf, medium right motion 
+stim(104).name = 'motion_wf_diag_back_R_1_hz';
+stim(104).num = 104;
+stim(104).pat_id = 21;
+stim(104).xpos_vec = [nan(1, prestim_time*50)...
                         ones(1, 50*motion_stim_time)...                    
                         nan(1, prestim_time*50)];
                                         
-stim(68).ypos_vec = [nan(1, prestim_time*50)...
+stim(104).ypos_vec = [nan(1, prestim_time*50)...
                         med_vec_R(1:50*motion_stim_time)...
                         nan(1, prestim_time*50)];
                     
-stim(68).type = 'position';
-stim(68).time = length(stim(68).xpos_vec)/50;
+stim(104).type = 'position';
+stim(104).time = length(stim(104).xpos_vec)/50;
 
-%% R vert bar wf, fast 
-stim(69).name = 'motion_wf_vert_R_3_hz';
-stim(69).num = 69;
-stim(69).pat_id = 19;
-stim(69).xpos_vec = [nan(1, prestim_time*50)...
+%% diag back bar wf, fast right motion
+stim(105).name = 'motion_wf_diag_back_R_3_hz';
+stim(105).num = 105;
+stim(105).pat_id = 21;
+stim(105).xpos_vec = [nan(1, prestim_time*50)...
                         ones(1, 50*motion_stim_time)...                    
                         nan(1, prestim_time*50)];
                     
-stim(69).ypos_vec = [nan(1, prestim_time*50)...
+stim(105).ypos_vec = [nan(1, prestim_time*50)...
                         fast_vec_R(1:50*motion_stim_time)...
                         nan(1, prestim_time*50)];
                     
-stim(69).type = 'position';
-stim(69).time = length(stim(69).xpos_vec)/50;
+stim(105).type = 'position';
+stim(105).time = length(stim(105).xpos_vec)/50;
 
-%% L vert bar L side, slow left motion
-stim(70).name = 'motion_Rside_vert_L_0.5_hz';
-stim(70).num = 70;
-stim(70).pat_id = 29;
-stim(70).xpos_vec = [nan(1, prestim_time*50)...
+%% diag back bar L side, slow left motion
+stim(106).name = 'motion_Rside_diag_back_L_0.5_hz';
+stim(106).num = 106;
+stim(106).pat_id = 24;
+stim(106).xpos_vec = [nan(1, prestim_time*50)...
                         21*ones(1, 50*motion_stim_time)...                    
                         nan(1, prestim_time*50)];
                                         
-stim(70).ypos_vec = [nan(1, prestim_time*50)...
+stim(106).ypos_vec = [nan(1, prestim_time*50)...
                         slow_vec_L(1:50*motion_stim_time)...
                         nan(1, prestim_time*50)];
                     
-stim(70).type = 'position';
-stim(70).time = length(stim(70).xpos_vec)/50;
+stim(106).type = 'position';
+stim(106).time = length(stim(106).xpos_vec)/50;
 
-%% L vert bar L side, medium left motion
-stim(71).name = 'motion_Rside_vert_L_1_hz';
-stim(71).num = 71;
-stim(71).pat_id = 29;
-stim(71).xpos_vec = [nan(1, prestim_time*50)...
+%% L diag back bar L side, medium left motion
+stim(107).name = 'motion_Rside_diag_back_L_1_hz';
+stim(107).num = 107;
+stim(107).pat_id = 24;
+stim(107).xpos_vec = [nan(1, prestim_time*50)...
                         21*ones(1, 50*motion_stim_time)...                    
                         nan(1, prestim_time*50)];
                                         
-stim(71).ypos_vec = [nan(1, prestim_time*50)...
+stim(107).ypos_vec = [nan(1, prestim_time*50)...
                         med_vec_L(1:50*motion_stim_time)...
                         nan(1, prestim_time*50)];
                     
-stim(71).type = 'position';
-stim(71).time = length(stim(71).xpos_vec)/50;
+stim(107).type = 'position';
+stim(107).time = length(stim(107).xpos_vec)/50;
 
-%% L vert bar L side, fast left motion
-stim(72).name = 'motion_Rside_vert_L_3_hz';
-stim(72).num = 72;
-stim(72).pat_id = 29;
-stim(72).xpos_vec = [nan(1, prestim_time*50)...
+%% L diag back bar L side, fast left motion
+stim(108).name = 'motion_Rside_diag_back_L_3_hz';
+stim(108).num = 108;
+stim(108).pat_id = 24;
+stim(108).xpos_vec = [nan(1, prestim_time*50)...
                         21*ones(1, 50*motion_stim_time)...                    
                         nan(1, prestim_time*50)];
                                         
-stim(72).ypos_vec = [nan(1, prestim_time*50)...
+stim(108).ypos_vec = [nan(1, prestim_time*50)...
                         fast_vec_L(1:50*motion_stim_time)...
                         nan(1, prestim_time*50)];
                     
-stim(72).type = 'position';
-stim(72).time = length(stim(72).xpos_vec)/50;
+stim(108).type = 'position';
+stim(108).time = length(stim(108).xpos_vec)/50;
 
-%% vert bar L side, slow, right motion
-stim(73).name = 'motion_Rside_vert_R_0.5_hz';
-stim(73).num = 73;
-stim(73).pat_id = 29;
-stim(73).xpos_vec = [nan(1, prestim_time*50)...
+%% R diag back bar L side, slow, right motion
+stim(109).name = 'motion_Rside_diag_back_R_0.5_hz';
+stim(109).num = 109;
+stim(109).pat_id = 26;
+stim(109).xpos_vec = [nan(1, prestim_time*50)...
                         21*ones(1, 50*motion_stim_time)...                    
                         nan(1, prestim_time*50)];
                                         
-stim(73).ypos_vec = [nan(1, prestim_time*50)...
+stim(109).ypos_vec = [nan(1, prestim_time*50)...
                         slow_vec_R(1:50*motion_stim_time)...
                         nan(1, prestim_time*50)];
                     
-stim(73).type = 'position';
-stim(73).time = length(stim(73).xpos_vec)/50;
+stim(109).type = 'position';
+stim(109).time = length(stim(109).xpos_vec)/50;
 
-%% L vert bar medium, right motion
-stim(74).name = 'motion_Rside_vert_R_1_hz';
-stim(74).num = 74;
-stim(74).pat_id = 29;
-stim(74).xpos_vec = [nan(1, prestim_time*50)...
+%% L diag back bar medium, right motion
+stim(110).name = 'motion_Rside_diag_back_R_1_hz';
+stim(110).num = 110;
+stim(110).pat_id = 26;
+stim(110).xpos_vec = [nan(1, prestim_time*50)...
                         21*ones(1, 50*motion_stim_time)...                    
                         nan(1, prestim_time*50)];
                                         
-stim(74).ypos_vec = [nan(1, prestim_time*50)...
+stim(110).ypos_vec = [nan(1, prestim_time*50)...
                         med_vec_R(1:50*motion_stim_time)...
                         nan(1, prestim_time*50)];
                     
-stim(74).type = 'position';
-stim(74).time = length(stim(74).xpos_vec)/50;
+stim(110).type = 'position';
+stim(110).time = length(stim(110).xpos_vec)/50;
 
-%% L vert bar fast, right motion
-stim(75).name = 'motion_Rside_vert_R_3_hz';
-stim(75).num = 75;
-stim(75).pat_id = 29;
-stim(75).xpos_vec = [nan(1, prestim_time*50)...
+%% L diag back bar fast, right motion
+stim(111).name = 'motion_Rside_diag_back_R_3_hz';
+stim(111).num = 111;
+stim(111).pat_id = 26;
+stim(111).xpos_vec = [nan(1, prestim_time*50)...
                         21*ones(1, 50*motion_stim_time)...                    
                         nan(1, prestim_time*50)];
                     
-stim(75).ypos_vec = [nan(1, prestim_time*50)...
+stim(111).ypos_vec = [nan(1, prestim_time*50)...
                         fast_vec_R(1:50*motion_stim_time)...
                         nan(1, prestim_time*50)];
                     
-stim(75).type = 'position';
-stim(75).time = length(stim(75).xpos_vec)/50;
+stim(111).type = 'position';
+stim(111).time = length(stim(111).xpos_vec)/50;
 
 
-%% vert bar R side, slow left motion
-stim(76).name = 'motion_Lside_vert_L_0.5_hz';
-stim(76).num = 76;
-stim(76).pat_id = 28;
-stim(76).xpos_vec = [nan(1, prestim_time*50)...
+%% diag back bar R side, slow left motion
+stim(112).name = 'motion_Lside_diag_back_L_0.5_hz';
+stim(112).num = 112;
+stim(112).pat_id = 26;
+stim(112).xpos_vec = [nan(1, prestim_time*50)...
                         21*ones(1, 50*motion_stim_time)...                    
                         nan(1, prestim_time*50)];
                                         
-stim(76).ypos_vec = [nan(1, prestim_time*50)...
+stim(112).ypos_vec = [nan(1, prestim_time*50)...
                         slow_vec_L(1:50*motion_stim_time)...
                         nan(1, prestim_time*50)];
                     
-stim(76).type = 'position';
-stim(76).time = length(stim(76).xpos_vec)/50;
+stim(112).type = 'position';
+stim(112).time = length(stim(112).xpos_vec)/50;
 
-%% vert bar R side, medium left motion
-stim(77).name = 'motion_Lside_vert_L_1_hz';
-stim(77).num = 77;
-stim(77).pat_id = 28;
-stim(77).xpos_vec = [nan(1, prestim_time*50)...
+%% diag back bar R side, medium left motion
+stim(113).name = 'motion_Lside_diag_back_L_1_hz';
+stim(113).num = 113;
+stim(113).pat_id = 26;
+stim(113).xpos_vec = [nan(1, prestim_time*50)...
                         21*ones(1, 50*motion_stim_time)...                    
                         nan(1, prestim_time*50)];
                                         
-stim(77).ypos_vec = [nan(1, prestim_time*50)...
+stim(113).ypos_vec = [nan(1, prestim_time*50)...
                         med_vec_L(1:50*motion_stim_time)...
                         nan(1, prestim_time*50)];
                     
-stim(77).type = 'position';
-stim(77).time = length(stim(77).xpos_vec)/50;
+stim(113).type = 'position';
+stim(113).time = length(stim(113).xpos_vec)/50;
 
-%% vert bar R side, fast left motion
-stim(78).name = 'motion_Lside_vert_L_3_hz';
-stim(78).num = 78;
-stim(78).pat_id = 28;
-stim(78).xpos_vec = [nan(1, prestim_time*50)...
+%% diag back bar R side, fast left motion
+stim(114).name = 'motion_Lside_diag_back_L_3_hz';
+stim(114).num = 114;
+stim(114).pat_id = 26;
+stim(114).xpos_vec = [nan(1, prestim_time*50)...
                         21*ones(1, 50*motion_stim_time)...                    
                         nan(1, prestim_time*50)];
                                         
-stim(78).ypos_vec = [nan(1, prestim_time*50)...
+stim(114).ypos_vec = [nan(1, prestim_time*50)...
                         fast_vec_L(1:50*motion_stim_time)...
                         nan(1, prestim_time*50)];
                     
-stim(78).type = 'position';
-stim(78).time = length(stim(78).xpos_vec)/50;
+stim(114).type = 'position';
+stim(114).time = length(stim(111).xpos_vec)/50;
 
-%% vert bar R side, slow, right motion
-stim(79).name = 'motion_Lside_vert_R_0.5_hz';
-stim(79).num = 79;
-stim(79).pat_id = 28;
-stim(79).xpos_vec = [nan(1, prestim_time*50)...
-                       21*ones(1, 50*motion_stim_time)...                    
+%% diag back bar R side, slow, right motion
+stim(115).name = 'motion_Lside_diag_back_R_0.5_hz';
+stim(115).num = 115;
+stim(115).pat_id = 26;
+stim(115).xpos_vec = [nan(1, prestim_time*50)...
+                        21*ones(1, 50*motion_stim_time)...                    
                         nan(1, prestim_time*50)];
                                         
-stim(79).ypos_vec = [nan(1, prestim_time*50)...
+stim(115).ypos_vec = [nan(1, prestim_time*50)...
                         slow_vec_R(1:50*motion_stim_time)...
                         nan(1, prestim_time*50)];
                     
-stim(79).type = 'position';
-stim(79).time = length(stim(79).xpos_vec)/50;
+stim(115).type = 'position';
+stim(115).time = length(stim(115).xpos_vec)/50;
 
-%% vert bar R side mediu right motion
-stim(80).name = 'motion_Lside_vert_R_1_hz';
-stim(80).num = 80;
-stim(80).pat_id = 28;
-stim(80).xpos_vec = [nan(1, prestim_time*50)...
+%% diag back bar R side medium right motion
+stim(116).name = 'motion_R_diag_back_R_1_hz';
+stim(116).num = 116;
+stim(116).pat_id = 26;
+stim(116).xpos_vec = [nan(1, prestim_time*50)...
                         21*ones(1, 50*motion_stim_time)...                    
                         nan(1, prestim_time*50)];
                                         
-stim(80).ypos_vec = [nan(1, prestim_time*50)...
+stim(116).ypos_vec = [nan(1, prestim_time*50)...
                         med_vec_R(1:50*motion_stim_time)...
                         nan(1, prestim_time*50)];
                     
-stim(80).type = 'position';
-stim(80).time = length(stim(80).xpos_vec)/50;
+stim(116).type = 'position';
+stim(116).time = length(stim(116).xpos_vec)/50;
 
-%% vert bar R side, fast right motion
-stim(81).name = 'motion_Lside_vert_R_3_hz';
-stim(81).num = 81;
-stim(81).pat_id = 28;
-stim(81).xpos_vec = [nan(1, prestim_time*50)...
+%% diag back bar R side, fast right motion
+stim(117).name = 'motion_R_diag_back_R_3_hz';
+stim(117).num = 117;
+stim(117).pat_id = 26;
+stim(117).xpos_vec = [nan(1, prestim_time*50)...
                         21*ones(1, 50*motion_stim_time)...                    
                         nan(1, prestim_time*50)];
                     
-stim(81).ypos_vec = [nan(1, prestim_time*50)...
+stim(117).ypos_vec = [nan(1, prestim_time*50)...
                         fast_vec_R(1:50*motion_stim_time)...
                         nan(1, prestim_time*50)];
                     
-stim(81).type = 'position';
-stim(81).time = length(stim(81).xpos_vec)/50;
+stim(117).type = 'position';
+stim(117).time = length(stim(117).xpos_vec)/50;
 
 
 

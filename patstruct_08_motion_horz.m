@@ -117,7 +117,7 @@ stim(51).type = 'position';
 stim(51).time = length(stim(51).xpos_vec)/50;
 
 %% horz bars L side, slow up motion
-stim(52).name = 'motion_L_horz_U_0.5_hz';
+stim(52).name = 'motion_Rside_horz_U_0.5_hz';
 stim(52).num = 52;
 stim(52).pat_id = 22;
 stim(52).xpos_vec = [nan(1, prestim_time*50)...
@@ -132,7 +132,7 @@ stim(52).type = 'position';
 stim(52).time = length(stim(52).xpos_vec)/50;
 
 %% horz bars L side, medium up motion
-stim(53).name = 'motion_L_horz_U_1_hz';
+stim(53).name = 'motion_Rside_horz_U_1_hz';
 stim(53).num = 53;
 stim(53).pat_id = 22;
 stim(53).xpos_vec = [nan(1, prestim_time*50)...
@@ -147,7 +147,7 @@ stim(53).type = 'position';
 stim(53).time = length(stim(53).xpos_vec)/50;
 
 %% horz bars L side, fast up motion
-stim(54).name = 'motion_L_horz_U_3_hz';
+stim(54).name = 'motion_Rside_horz_U_3_hz';
 stim(54).num = 54;
 stim(54).pat_id = 22;
 stim(54).xpos_vec = [nan(1, prestim_time*50)...
@@ -162,7 +162,7 @@ stim(54).type = 'position';
 stim(54).time = length(stim(54).xpos_vec)/50;
 
 %% horz bars L side, slow down motion
-stim(55).name = 'motion_L_horz_D_0.5_hz';
+stim(55).name = 'motion_Rside_horz_D_0.5_hz';
 stim(55).num = 55;
 stim(55).pat_id = 22;
 stim(55).xpos_vec = [nan(1, prestim_time*50)...
@@ -177,7 +177,7 @@ stim(55).type = 'position';
 stim(55).time = length(stim(55).xpos_vec)/50;
 
 %% horz bars L side, medium down motion
-stim(56).name = 'motion_L_horz_D_1_hz';
+stim(56).name = 'motion_Rside_horz_D_1_hz';
 stim(56).num = 56;
 stim(56).pat_id = 22;
 stim(56).xpos_vec = [nan(1, prestim_time*50)...
@@ -192,7 +192,7 @@ stim(56).type = 'position';
 stim(56).time = length(stim(56).xpos_vec)/50;
 
 %% horz bars L side, fast down motion
-stim(57).name = 'motion_L_horz_D_3_hz';
+stim(57).name = 'motion_Rside_horz_D_3_hz';
 stim(57).num = 57;
 stim(57).pat_id = 22;
 stim(57).xpos_vec = [nan(1, prestim_time*50)...
@@ -208,7 +208,7 @@ stim(57).time = length(stim(57).xpos_vec)/50;
 
 
 %% horz bars R side, slow up motion
-stim(58).name = 'motion_R_horz_U_0.5_hz';
+stim(58).name = 'motion_Lside_horz_U_0.5_hz';
 stim(58).num = 58;
 stim(58).pat_id = 23;
 stim(58).xpos_vec = [nan(1, prestim_time*50)...
@@ -223,7 +223,7 @@ stim(58).type = 'position';
 stim(58).time = length(stim(58).xpos_vec)/50;
 
 %% horz bars R side, medium up motion
-stim(59).name = 'motion_R_horz_U_1_hz';
+stim(59).name = 'motion_Lside_horz_U_1_hz';
 stim(59).num = 59;
 stim(59).pat_id = 23;
 stim(59).xpos_vec = [nan(1, prestim_time*50)...
@@ -238,7 +238,7 @@ stim(59).type = 'position';
 stim(59).time = length(stim(59).xpos_vec)/50;
 
 %% horz bars R side, fast up motion
-stim(60).name = 'motion_R_horz_U_3_hz';
+stim(60).name = 'motion_Lside_horz_U_3_hz';
 stim(60).num = 60;
 stim(60).pat_id = 23;
 stim(60).xpos_vec = [nan(1, prestim_time*50)...
@@ -253,7 +253,7 @@ stim(60).type = 'position';
 stim(60).time = length(stim(60).xpos_vec)/50;
 
 %% horz bars R side, slow down motion
-stim(61).name = 'motion_R_horz_D_0.5_hz';
+stim(61).name = 'motion_Lside_horz_D_0.5_hz';
 stim(61).num = 61;
 stim(61).pat_id = 23;
 stim(61).xpos_vec = [nan(1, prestim_time*50)...
@@ -268,7 +268,7 @@ stim(61).type = 'position';
 stim(61).time = length(stim(61).xpos_vec)/50;
 
 %% horz bars R side, medium down motion
-stim(62).name = 'motion_R_horz_D_1_hz';
+stim(62).name = 'motion_Lside_horz_D_1_hz';
 stim(62).num = 62;
 stim(62).pat_id = 23;
 stim(62).xpos_vec = [nan(1, prestim_time*50)...
@@ -283,7 +283,7 @@ stim(62).type = 'position';
 stim(62).time = length(stim(62).xpos_vec)/50;
 
 %% horz bars R side, fast down motion
-stim(63).name = 'motion_R_horz_D_3_hz';
+stim(63).name = 'motion_Lside_horz_D_3_hz';
 stim(63).num = 63;
 stim(63).pat_id = 23;
 stim(63).xpos_vec = [nan(1, prestim_time*50)...
