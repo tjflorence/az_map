@@ -1,0 +1,47 @@
+expi.settings.num_reps = 2;
+expi.settings.stim_struct = generate_az_map_stim_struct() ;
+
+time_unsort = [];
+for ii = 1:length(expi.settings.stim_struct)
+    time_unsort = [time_unsort expi.settings.stim_struct(ii).time];
+    
+end
+
+
+early_times = [94.3200   86.6400   50.1600   46.3200 ...
+               29.0400   20.7200   19.4400   18.0000 ...
+               17.5200   12.0000   11.7600    9.8400 ...
+               8.8800    8.0000    6.9600];
+
+late_times = [15.00 16.00];
+
+% randomize order 
+exp_order = [];
+for jj = 1:length(early_times)
+    for ii = 1:expi.settings.num_reps
+    
+        exp_order = [exp_order find(time_unsort == early_times(jj))];
+    
+    end
+end
+
+remaining_exps = [];
+for jj = 1:length(late_times)
+
+    for ii = 1:expi.settings.num_reps
+
+        remaining_exps = [remaining_exps find(time_unsort == late_times(jj))];
+    
+    end
+end
+remaining_exps = remaining_exps(randperm(length(remaining_exps)));
+expi.settings.exp_order = [exp_order remaining_exps];
+
+%unique_time = unique(time_unsort);
+%unique_time = fliplr(sort(unique_time));
+%time_order = [];
+%for ii = 1:length(unique_time)
+%    c_time = unique_time(ii);
+%    time_inds = find(time_unsort==c_time);
+%    time_order = [time_order time_inds];
+%end
