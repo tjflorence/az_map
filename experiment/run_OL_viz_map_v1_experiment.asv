@@ -6,9 +6,9 @@ daqreset
 
 %% experiment level settings
 %  names
-expi.settings.name       = 'OL_stim';
-expi.settings.geno       = 'test';
-expi.settings.notes      = '660'; 
+expi.settings.name       = 'OL_map';
+expi.settings.geno       = '11f03';
+expi.settings.notes      = 'left lt'; 
 expi.settings.age        = 4;
 expi.settings.date       = datestr(now, 'yyyymmddHHMMSS');
 expi.settings.fname      = [expi.settings.date '_' expi.settings.geno '_' ...
@@ -30,9 +30,18 @@ expi.camera.do_capture = 0;
 
 %% generate stimulus control
 expi.settings.stim_struct = generate_az_map_stim_struct() ;
+all_exps = 1:length(expi.settings.stim_struct);
+early_exps = [10:45 154:171];
+late_exps = [1:9 46:153];
 
 % randomize order 
 exp_order = [];
+for ii = 1:expi.settings.num_reps
+
+    exp_order = [exp_order (randperm(length(early_exps)))];
+    
+end
+
 for ii = 1:expi.settings.num_reps
 
     exp_order = [exp_order randperm(length(expi.settings.stim_struct))];
@@ -100,7 +109,7 @@ app.ao.outputSingleScan([-4.99 0 0 -4.99 0 0 0])
 %% now run trials
 f1 = figure('color', 'w', 'position', [27 607 727 380]);
 %for aa = 1:length(expi.settings.exp_order)
-for aa = 118:length(expi.settings.exp_order)
+for aa = 4:length(expi.settings.exp_order)
     
     c_stim_num = expi.settings.exp_order(aa);
     c_stim_struct = expi.settings.stim_struct(c_stim_num);
