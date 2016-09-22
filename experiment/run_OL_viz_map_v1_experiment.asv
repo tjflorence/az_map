@@ -18,7 +18,7 @@ expi.settings.savedir    = 'C:\hot-dir\';
 expi.settings.rot_gain       = .4;
 expi.settings.fwd_gain       = 1;
 expi.settings.hz             = 50; 
-expi.settings.num_reps       = 3;
+expi.settings.num_reps       = 2;
 
 expi.settings.light_power    = [-4.99];
 expi.settings.trial_time     = 300;
@@ -30,25 +30,46 @@ expi.camera.do_capture = 0;
 
 %% generate stimulus control
 expi.settings.stim_struct = generate_az_map_stim_struct() ;
-all_exps = 1:length(expi.settings.stim_struct);
-early_exps = [10:45 154:171];
-late_exps = [1:9 46:153];
+
+%% organize exp order in such a way so i don't have to constantly switch trial times
+time_unsort = [];
+for ii = 1:length(expi.settings.stim_struct)
+    time_unsort = [time_unsort expi.settings.stim_struct(ii).time];
+    
+end
+
+
+early_times = [94.3200   86.6400   50.1600   46.3200 ...
+               29.0400   20.7200   19.4400   18.0000 ...
+               17.5200   12.0000   11.7600    9.8400 ...
+               8.8800    8.0000    6.9600];
+
+late_times = [15.00 16.00];
 
 % randomize order 
 exp_order = [];
-for ii = 1:expi.settings.num_reps
 
-    exp_order = [exp_order (randperm(length(early_exps)))];
+remaining_exps = [];
+for jj = 1:length(late_times)
+
+    for ii = 1:expi.settings.num_reps
+
+        remaining_exps = [remaining_exps find(time_unsort == late_times(jj))];
     
+    end
 end
 
-for ii = 1:expi.settings.num_reps
-
-    exp_order = [exp_order randperm(length(expi.settings.stim_struct))];
+for jj = 1:length(early_times)
+    for ii = 1:expi.settings.num_reps
     
+        exp_order = [exp_order find(time_unsort == early_times(jj))];
+    
+    end
 end
-expi.settings.exp_order = exp_order;
 
+
+remaining_exps = remaining_exps(randperm(length(remaining_exps)));
+expi.settings.exp_order = [ remaining_exps exp_order];
 % 
 
 vi_m = videoinput('pointgrey', 1);
@@ -109,7 +130,7 @@ app.ao.outputSingleScan([-4.99 0 0 -4.99 0 0 0])
 %% now run trials
 f1 = figure('color', 'w', 'position', [27 607 727 380]);
 %for aa = 1:length(expi.settings.exp_order)
-for aa = 4:length(expi.settings.exp_order)
+for aa = 119:length(expi.settings.exp_order)
     
     c_stim_num = expi.settings.exp_order(aa);
     c_stim_struct = expi.settings.stim_struct(c_stim_num);
